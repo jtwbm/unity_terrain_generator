@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor (typeof (MapGenerator))]
-public class MapGeneratorEditor : Editor
+[CustomEditor (typeof (MapPreview))]
+public class MapPreviewEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        MapGenerator mapGen = (MapGenerator) target;
+        MapPreview mapPreview = (MapPreview) target;
 
         if (DrawDefaultInspector()) // if any value was changed
         {
-            if (mapGen.autoUpdate)
+            if (mapPreview.autoUpdate)
             {
-                mapGen.DrawMapInEditor();
+                mapPreview.DrawMapInEditor();
             }
         }
 
         // add Generate button to Inspector
         if (GUILayout.Button("Generate"))
         {
-            mapGen.DrawMapInEditor();
+            mapPreview.DrawMapInEditor();
         }
     }
 }

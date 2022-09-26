@@ -1,10 +1,11 @@
-Shader "Custom/Terrain" {
+Shader "Custom/Terrain"
+{
 	Properties {
 		testTexture("Texture", 2D) = "white"{}
 		testScale("Scale", Float) = 1
-
 	}
-	SubShader {
+	SubShader
+  {
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		
@@ -63,10 +64,7 @@ Shader "Custom/Terrain" {
 
 				o.Albedo = o.Albedo * (1-drawStrength) + (baseColour+textureColour) * drawStrength;
 			}
-
-		
 		}
-
 
 		ENDCG
 	}
